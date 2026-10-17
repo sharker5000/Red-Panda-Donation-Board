@@ -1,0 +1,13 @@
+{% extends 'donation/base.html' %}
+
+{% block content %}
+    <article class="donation">
+        {% if donation.donationDate %}
+            <time class="date">
+                {{ donation.donationDate }}
+            </time>
+        {% endif %}
+        <h2>{{ donation.donationAmount }}</h2>
+        <p>{{ donation.donationMessage|linebreaksbr }}</p>
+    </article>
+{% endblock %}

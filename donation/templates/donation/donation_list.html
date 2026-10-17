@@ -1,0 +1,14 @@
+{% extends 'donation/base.html' %}
+
+{% block content %}
+    <article>
+        <h1>Top Donations</h1>
+    </article>    
+    {% for donation in donations %}
+        <article class="donation list">
+            <h4><a href="{% url 'donation_details' pk=donation.pk %}">{{ donation.donationAmount }}</a></h4>
+            <p>Donated by {{ donation.donator }} on {{donation.donationDate}}</p>
+            <p>{{ donation.donationMessage|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+{% endblock %}
