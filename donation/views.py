@@ -26,7 +26,7 @@ def donation_new(request):
             donationpost.donator = request.user
             donationpost.donationDate = timezone.now()
             donationpost.save()
-            return redirect('donation_details', pk=donationpost.pk)
+            return redirect('donation_list')
     else:
         form = DonationForm()
     return render(request, 'donation/donation_edit.html', {'form': form})
